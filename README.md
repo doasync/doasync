@@ -29,4 +29,9 @@ doAsync(fs).readFile('package.json', 'utf8')
   });
 ```
 
-### Yep!
+### Tips
+------------------
+
+If you need to receive multiple arguments - use **util.customPromisifyArgs**
+
+If you need a custom promisify function - use **util.promisify.custom**
