@@ -1,9 +1,9 @@
 Welcome to the async world!
 ===================
 
-Hey! I'm a tiny cute npm module, **doAsync**. 40 lines of code! Don't ignore me, I'm very helpful! With me you can call any method of your object without a callback and receive a promise! Object is not modified! Cool, ha?
+Hey! I’m a tiny little npm module - **doasync**. 40 lines of code! Don’t ignore me, I’m very helpful! With me you can call any method of your object without a callback and receive a promise! Object is not modified! Cool, ha?
 
-I can be used along with **util.promisify**. He works with functions, I work with objects. But before we go, we must thank and give all credit to **Proxy** and ES6 guys.
+You can use me alongside with **util.promisify** guy. He works with functions, I work with objects, but he helps me. But before we go, we must thank and give all credit to **Proxy** and **ES6** guys... **WeakMap** has also proved useful.
 
 ----------
 
