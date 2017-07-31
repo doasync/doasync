@@ -1,0 +1,14 @@
+# Dependency directory
+node_modules/
+
+# JetBrains IntelliJ IDEA IDE (WebStorm)
+\.idea/
+
+# dotenv environment variables file
+\.env
+
+# Hidden files
+\.hidden
+
+# Package zip-file
+doasync\.zip
