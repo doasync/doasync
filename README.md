@@ -1,9 +1,9 @@
 Welcome to the async world!
 ===================
 
-Hey! I’m a tiny little npm module - **doasync**. 40 lines of code! Don’t ignore me, I’m very helpful! With me you can call any method of your object without a callback and receive a promise! Object is not modified! Cool, ha?
+Hey! I’m a tiny little npm module - **doasync**. 50 lines of code! Don’t ignore me, I’m very helpful! With me you can call any method of your object without a callback and receive a promise! Object is not modified! Cool, ha?
 
-**util.promisify** guy helps me to work with functions and object methods. But before we go, we must thank and give all credit to **Proxy** and **ES6** guys... **WeakMap** has also proved useful.
+I can promisify functions as well not only objecs and **util.promisify** guy helps me. But before we go, we must thank and give all credit to **Proxy** and **ES6** guys... **WeakMap** has also proved useful.
 
 ----------
 
@@ -26,7 +26,7 @@ const fs = require('fs');
 const doAsync = require('doasync');
 
 doAsync(fs).readFile('package.json', 'utf8')
-  .then((result) => {
+  .then(result => {
     console.dir(JSON.parse(result), {colors: true});
   });
 ```
