@@ -1,3 +1,20 @@
+![DoAsync logo](http://i.imgur.com/2X3FhA7.png)
+
+[![NPM Version][npm-image]][npm-url] ![NPM Downloads][downloads-image] [![GitHub issues][issues-image]][issues-url] [![Telegram][telegram-image]][telegram-url] [![Tweet][twitter-image]][twitter-url]
+
+[npm-image]: https://img.shields.io/npm/v/doasync.svg
+[npm-url]: https://www.npmjs.com/package/doasync
+[downloads-image]: https://img.shields.io/npm/dw/doasync.svg
+[deps-image]: https://david-dm.org/doasync/doasync.svg
+[issues-image]: https://img.shields.io/github/issues/doasync/doasync.svg
+[issues-url]: https://github.com/doasync/doasync/issues
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-url]: https://raw.githubusercontent.com/doasync/doasync/master/LICENSE
+[twitter-image]: http://i.imgur.com/VYWV3yd.png
+[twitter-url]: https://twitter.com/intent/tweet?text=Promisify%20everything%20without%20modification%20using%20util.promisify%20and%20ES6%20Proxy%3A&url=https://codeburst.io/do-async-js-c0bfa6ce1536
+[telegram-image]: http://i.imgur.com/WANXk3d.png
+[telegram-url]: https://t.me/doasync
+
 Welcome to the async world!
 ===================
 
