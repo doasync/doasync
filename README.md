@@ -24,10 +24,8 @@ I can promisify functions as well not only objecs and **util.promisify** guy hel
 
 ----------
 
-Let's go!
+Installation
 -------------
-
-Install me first:
 
 ```bash
 npm i --save doasync
@@ -66,6 +64,8 @@ doAsync(myFunc).apply(context, params)
 ```
 
 `util.promisify()` which is under the hood of this module can interact directly with the V8 API, so it doesn't create closures and will be faster than userland implementations.
+
+You can use it in **asinc/await** of course!
 
 ### Tip
 ------------------
