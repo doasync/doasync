@@ -23,17 +23,12 @@ function doAsync (object) {
       if (isFunction(target[prop])) {
         const fn = target[prop];
         return fn.length
-          ? (...args) => {
-              // Use 'undefined' for missing arguments
-              args.length = fn.length && fn.length - 1;
-              return promisify(fn).apply(target, args);
-            }
+          ? (...args) => promisify(fn).apply(target, args)
           : () => Promise.resolve(fn.call(target));
       }
       return target[prop];
     },
     apply (fn, thisValue, args) {
-      args.length = fn.length && fn.length - 1;
       return fn.length
         ? promisify(fn).apply(thisValue, args)
         : Promise.resolve(fn.call(thisValue));
