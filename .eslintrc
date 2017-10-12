@@ -1,0 +1,23 @@
+{
+  "extends": ["airbnb-bundle"],
+  "rules": {
+    "strict": "off",
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "always",
+      "asyncArrow": "always"
+    }],
+    "no-use-before-define": ["error", {
+      "functions": false,
+      "classes": true
+    }],
+    "comma-dangle": ["error", {
+      "arrays": "only-multiline",
+      "objects": "only-multiline",
+      "imports": "only-multiline",
+      "exports": "only-multiline",
+      "functions": "never"
+    }],
+    "function-paren-newline": "off"
+  }
+}

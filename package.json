@@ -4,7 +4,6 @@
   "author": "doasync <doasync@gmail.com>",
   "license": "MIT",
   "description": "Promisify everything without modification using util.promisify and ES6 Proxy",
-  "bundleDependencies": false,
   "deprecated": false,
   "engines": {
     "node": ">= 8.2.1",

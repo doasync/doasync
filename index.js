@@ -1,44 +1,42 @@
+'use strict';
 
-const {promisify} = require('util');
+const { promisify } = require('util');
+
+const proxyMap = new WeakMap();
+const asyncMap = new WeakMap();
+
+function doAsync (object) {
+  const proxyHandler = {
+    get (target, prop) {
+      if (isFunction(target[prop])) {
+        const fn = target[prop];
+        return from(asyncMap, fn,
+          fn.length
+            ? (...args) => promisify(fn).apply(target, args)
+            : () => Promise.resolve(fn.call(target))
+        );
+      }
+      return target[prop];
+    },
+    apply (fn, thisValue, args) {
+      return fn.length
+        ? from(asyncMap, fn, promisify(fn).apply(thisValue, args))
+        : Promise.resolve(fn.call(thisValue));
+    }
+  };
+
+  return from(proxyMap, object, new Proxy(object, proxyHandler));
+}
+
+function from (map, key, value) {
+  return map.get(key) || map.set(key, value).get(key);
+}
 
 function isFunction (fn) {
   return !!(
     fn && fn.constructor && fn.call && fn.apply &&
     Object.prototype.toString.call(fn) === '[object Function]'
   );
-}
-
-const proxyMap = new WeakMap();
-
-function doAsync (object) {
-  // Return from weakMap
-  let proxy = proxyMap.get(object);
-  if (proxy) {
-    return proxy;
-  }
-
-  // Create proxy
-  proxy = new Proxy(object, {
-    get (target, prop) {
-      if (isFunction(target[prop])) {
-        const fn = target[prop];
-        return fn.length
-          ? (...args) => promisify(fn).apply(target, args)
-          : () => Promise.resolve(fn.call(target));
-      }
-      return target[prop];
-    },
-    apply (fn, thisValue, args) {
-      return fn.length
-        ? promisify(fn).apply(thisValue, args)
-        : Promise.resolve(fn.call(thisValue));
-    }
-  });
-
-  // Save to weakMap
-  proxyMap.set(object, proxy);
-
-  return proxy;
 }
 
 module.exports = doAsync;
