@@ -67,7 +67,7 @@ doAsync(myFunc).apply(context, params)
 
 Memoization is used in the module to prevent functions from being promisified each time (with the use of WeakMaps).
 
-You can use it in **asinc/await** of course!
+You can use it in **async/await** of course!
 
 ### Tip
 ------------------
